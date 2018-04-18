@@ -23,26 +23,27 @@ public class ChangeMaker {
                 
 		for (int i = 1; i < memoArray.length; i++) {
 
-			for(int j = 0; j< coinArray.length; j++){
-                            if ((i-coinArray[j])>=coinArray[0]){
-                                memoArray[i]=coinArray[0];
-                                j=coinArray.length;
-                            }                           
+			for(int j = 0; j< coinArray.length; j++){ 
                             
-                            else if(i%coinArray[j]==0){
- 
+                            if(i%coinArray[j]==0){ 
                                 memoArray[i]=coinArray[j];
-                                j=coinArray.length;                            
+                                j=coinArray.length;                           
                                 
                             }
+                            
+                            else if(i>=coinArray[0]){
+                                memoArray[i]=coinArray[0];
+                                j=coinArray.length;
+                            }
+                                                       
+                            
                             else{
-                                memoArray[i]=1;
+                                memoArray[i]=coinArray[j];
                             }                                  
                             
                         }			
 		}                
-                while(changeDue>0){
-                    
+                while(changeDue>0){                    
                     coinList.add(memoArray[changeDue]);
                     changeDue-=memoArray[changeDue];
                 }

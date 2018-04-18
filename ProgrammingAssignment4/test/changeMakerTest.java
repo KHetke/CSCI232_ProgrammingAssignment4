@@ -46,13 +46,13 @@ public class changeMakerTest {
 	}
 	
 	@Test
-	public void testThreeCoinsDue() {
-		int changeDue = 7;
+	public void testHigherValue() {
+		int changeDue = 81;
 		int coinArray[] = {25, 10, 5, 1};
 		
 		List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
 		
-		assertTrue(coinList.size() == 3 && coinList.get(0) == 1 && coinList.get(1) == 1 && coinList.get(2) == 5);
+		assertTrue(coinList.size() == 5 && coinList.get(0) == 25 && coinList.get(1) == 25 && coinList.get(2) == 25 && coinList.get(3) == 1 && coinList.get(4) == 5 );
 	}
         
         @Test
@@ -63,5 +63,17 @@ public class changeMakerTest {
 		List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
 		
 		assertTrue(coinList.size() == 5 && coinList.get(0) == 25 && coinList.get(1) == 25 && coinList.get(2) == 1 && coinList.get(3) == 1 && coinList.get(4) == 12);
+	}
+        
+      
+        
+        @Test
+	public void DifferentMoneySystem2() {
+		int changeDue = 67;
+		int coinArray[] = {27, 17, 13, 1};
+		
+		List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
+		
+		assertTrue(coinList.size() == 3 && coinList.get(0) == 27 && coinList.get(1) == 27 && coinList.get(2) == 13 );
 	}
 }
