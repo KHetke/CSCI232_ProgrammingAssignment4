@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 import java.util.List;
 import org.junit.Test;
@@ -11,9 +7,11 @@ import programmingassignment4.ChangeMaker;
 
 /**
  *
- * @author Rusty
+ * @authors Kamran Hetke, Rusty Clayton
+ * Date: 4/17/2018
+ * Description: A test file to run the changemaker class with a dynamic algorithm
  */
-public class NewEmptyJUnitTest {
+public class changeMakerTest {
     
    @Test
 	public void testEmptyArray() {

@@ -1,16 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package programmingassignment4;
 
 /*
- * Author: Kamran Hetke
- * Date: 4/13/2018
- * Overview: This program finds the minimum amount of coins via
- * greedy algorithm, and puts the coins that constitute the
- * change due into a list.
+ * @authors Kamran Hetke, Rusty Clayton
+ * Date: 4/17/2018
+ * Description: Change Maker class runs a dynamic algorith to return a list of coins as change.
  */
 import java.util.*;
 
