@@ -27,14 +27,14 @@ public class ChangeMaker {
                         if(j>=coinArray[i-1] && i>1){
                             //logic for any rows beyond the ones place
                             //if the value of the current coin is less than
-                            //the current value desired it takes assumes the minimum
+                            //the current value desired it assumes the minimum
                             //value between the number of coins in the row above it
                             //or the number of coins at the value minus the value of the coin back in the row plus 1
                             //for example( if coins system is {1,5} and value is 11
                             // the ones place fills with 1-11 on it's row, on 5's row
                             // it fills 1,2,3,4,1 because 1 is the minimum between 5, 
                             //the ones place at val 5, and 1+0.  It continues to fill to
-                            // 11 as 1,2,3,4,1,2,3,4,2,2
+                            // 11 as 1,2,3,4,1,2,3,4,2,3
                             memoArray[i][j]=getMin(memoArray[i-1][j],1+memoArray[i][j-coinArray[i-1]]);
                             
                         }else if(i>1){
