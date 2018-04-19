@@ -76,4 +76,13 @@ public class changeMakerTest {
 		
 		assertTrue(coinList.size() == 3 && coinList.get(0) == 27 && coinList.get(1) == 27 && coinList.get(2) == 13 );
 	}
+        @Test
+	public void DifferentMoneySystem3() {
+		int changeDue = 67;
+		int coinArray[] = {1,13,22,25};
+		
+		List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
+		
+		assertTrue(coinList.size() == 4 && coinList.get(0) == 22 && coinList.get(1) == 22 && coinList.get(2) == 22 && coinList.get(3)==1 );
+	}
 }
