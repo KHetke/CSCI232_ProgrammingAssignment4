@@ -18,38 +18,49 @@ public class ChangeMaker {
 			throw new IllegalArgumentException("Empty array");
 		}
 		
-                int [] memoArray= new int [changeDue+1];
-                memoArray[0]=0;
+                int [][] memoArray= new int [coinArray.length+1][changeDue+1];
+                memoArray[0][0]=0;
                 
-		for (int i = 1; i < memoArray.length; i++) {
-
-			for(int j = 0; j< coinArray.length; j++){ 
-                            
-                            if(i%coinArray[j]==0){ 
-                                memoArray[i]=coinArray[j];
-                                j=coinArray.length;                           
-                                
-                            }
-                            
-                            else if(i>=coinArray[0]){
-                                memoArray[i]=coinArray[0];
-                                j=coinArray.length;
-                            }
-                                                       
-                            
-                            else{
-                                memoArray[i]=coinArray[j];
-                            }                                  
-                            
-                        }			
-		}                
-                while(changeDue>0){                    
-                    coinList.add(memoArray[changeDue]);
-                    changeDue-=memoArray[changeDue];
+                
+                for (int i=1; i<memoArray.length;i++){
+                    for(int j=0; j<memoArray[0].length; j++){
+                        if(j>=coinArray[i-1] && i>1){
+                            memoArray[i][j]=getMin(memoArray[i-1][j],1+memoArray[i][j-coinArray[i-1]]);
+                        }else if(i>1){
+                            memoArray[i][j]=memoArray[i-1][j];
+                        }else{
+                            memoArray[i][j]=j;
+                        }
+                    }
+                }
+                
+                
+                int i=memoArray.length-1;
+                int j=memoArray[0].length-1;
+		while(memoArray[i][j]>0){
+                    
+                    
+                    if(memoArray[i-1][j]==memoArray[i][j]){
+                        i--;
+                    }else{
+                        j-=coinArray[i-1];
+                        coinList.add(coinArray[i-1]);
+                    }
+                    
                 }
 		
 		return coinList;
 		
 	}
+        
+        public static int getMin(int one, int two){
+            if(one<=two){
+                return one;
+            }
+            else{
+                return two;
+            }
+            
+        }
 	
 }
