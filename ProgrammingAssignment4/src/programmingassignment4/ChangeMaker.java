@@ -75,7 +75,7 @@ public class ChangeMaker {
                 int [] memoArray2 = new int[changeDue+1];
                 int [] outputArray2 = new int[changeDue+1];
                 
-                int maximum=Integer.MAX_VALUE;
+                int maximum=Integer.MAX_VALUE-1;
                 
                 memoArray2[0]=0;
                 outputArray2[0]=-1;
@@ -86,9 +86,11 @@ public class ChangeMaker {
                 
                 for(int i=0; i<coinArray.length;i++){
                     for(int j=0; j<changeDue+1; j++){     
-                        if(j>=coinArray[i]){                            
+                        if(j>=coinArray[i]){   
+                            
                             int temp = memoArray2[j];                            
                             memoArray2[j]=getMin((memoArray2[j-coinArray[i]]+1),j);
+                            
                             if(memoArray2[j]<temp){
                                 outputArray2[j]=i;
                             }
@@ -98,8 +100,14 @@ public class ChangeMaker {
                 
                 int i=changeDue;
                 while(i>0){
-                    coinList.add(coinArray[outputArray2[i]]);
-                    i-=coinArray[outputArray2[i]];
+                    if(outputArray2[i]==-1){
+                        List<Integer> emptyList = new ArrayList<Integer>();
+                        return emptyList; 
+                    }else{
+                        coinList.add(coinArray[outputArray2[i]]);
+                        i-=coinArray[outputArray2[i]];
+                    }
+                    
                 }
                 
 		return coinList;

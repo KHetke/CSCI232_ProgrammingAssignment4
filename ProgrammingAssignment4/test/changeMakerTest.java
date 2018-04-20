@@ -56,7 +56,7 @@ public class changeMakerTest {
 	}
         
         @Test
-	public void DifferentMoneySystem() {
+	public void testDifferentMoneySystem() {
 		int changeDue = 64;
 		int coinArray[] = {1,5,12,25};
 		
@@ -68,7 +68,7 @@ public class changeMakerTest {
       
         
         @Test
-	public void DifferentMoneySystem2() {
+	public void testDifferentMoneySystem2() {
 		int changeDue = 67;
 		int coinArray[] = {1,13,17,27};
 		
@@ -77,12 +77,32 @@ public class changeMakerTest {
 		assertTrue(coinList.size() == 3 && coinList.get(0) == 27 && coinList.get(1) == 27 && coinList.get(2) == 13 );
 	}
         @Test
-	public void DifferentMoneySystem3() {
+	public void testDifferentMoneySystem3() {
 		int changeDue = 67;
 		int coinArray[] = {1,13,22,25};
 		
 		List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
 		
 		assertTrue(coinList.size() == 4 && coinList.get(0) == 22 && coinList.get(1) == 22 && coinList.get(2) == 22 && coinList.get(3)==1 );
+	}
+        
+        @Test
+	public void testCoinSystemCannotGetValue1() {
+		int changeDue = 3;
+		int coinArray[] = {2,4,6};
+		
+		List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
+		
+		assertTrue(coinList.size()==0);
+	}
+        
+        @Test
+	public void testCoinSystemCannotGetValue2() {
+		int changeDue = 2;
+		int coinArray[] = {3,4};
+		
+		List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
+		
+		assertTrue(coinList.size()==0 );
 	}
 }
