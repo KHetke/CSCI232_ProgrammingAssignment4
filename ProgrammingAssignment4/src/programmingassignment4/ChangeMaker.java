@@ -91,7 +91,7 @@ public class ChangeMaker {
                             int temp = memoArray2[j];                            
                             memoArray2[j]=getMin((memoArray2[j-coinArray[i]]+1),j);
                             
-                            if(memoArray2[j]<temp){
+                            if(memoArray2[j]<=temp){
                                 outputArray2[j]=i;
                             }
                         }                                           
