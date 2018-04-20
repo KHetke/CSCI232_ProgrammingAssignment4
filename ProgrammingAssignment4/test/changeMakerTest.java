@@ -105,4 +105,37 @@ public class changeMakerTest {
 		
 		assertTrue(coinList.size()==0 );
 	}
+        
+        @Test
+        public void testCoinSystemValue10()
+        {
+            int changeDue = 10;
+            int coinArray[] = {1, 10, 12};
+            
+            List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
+            
+            assertTrue(coinList.size() == 1 && coinList.get(0) == 10);
+        }
+        
+        @Test
+        public void testCoinSystemValue12()
+        {
+            int changeDue = 12;
+            int coinArray[] = {1, 10, 12};
+            
+            List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
+            
+            assertTrue(coinList.size() == 1 && coinList.get(0) == 12);
+        }
+        
+        @Test
+        public void testCoinSystemValue13()
+        {
+            int changeDue = 13;
+            int coinArray[] = {1, 10, 12};
+            
+            List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
+            
+            assertTrue(coinList.size() == 2 && coinList.get(0) == 12 && coinList.get(1) == 1);
+        }
 }
