@@ -98,8 +98,8 @@ public class changeMakerTest {
         
         @Test
 	public void testCoinSystemCannotGetValue2() {
-		int changeDue = 2;
-		int coinArray[] = {3,4};
+		int changeDue = 32;
+		int coinArray[] = {5,10,25};
 		
 		List<Integer> coinList = ChangeMaker.makeChange(changeDue, coinArray);
 		

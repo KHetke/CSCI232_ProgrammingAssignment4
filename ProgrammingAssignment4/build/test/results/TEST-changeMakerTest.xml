@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Lappy" name="changeMakerTest" skipped="0" tests="9" time="0.25" timestamp="2018-04-20T17:46:45">
+<testsuite errors="0" failures="0" hostname="Lappy" name="changeMakerTest" skipped="0" tests="9" time="0.188" timestamp="2018-04-20T18:14:28">
   <properties>
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="nb.wait.for.caches" value="true" />
@@ -39,7 +39,7 @@
     <property name="user.name" value="rusty_000" />
     <property name="copylibs.rebase" value="true" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner changeMakerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\rusty_000\Documents\GitHub\CSCI232_ProgrammingAssignment4\ProgrammingAssignment4\build\test\results\TEST-changeMakerTest.xml crashfile=C:\Users\rusty_000\Documents\GitHub\CSCI232_ProgrammingAssignment4\ProgrammingAssignment4\build\junitvmwatcher7976957960772909581.properties propsfile=C:\Users\rusty_000\Documents\GitHub\CSCI232_ProgrammingAssignment4\ProgrammingAssignment4\build\junit8415638521460368919.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner changeMakerTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\rusty_000\Documents\GitHub\CSCI232_ProgrammingAssignment4\ProgrammingAssignment4\build\test\results\TEST-changeMakerTest.xml crashfile=C:\Users\rusty_000\Documents\GitHub\CSCI232_ProgrammingAssignment4\ProgrammingAssignment4\build\junitvmwatcher4537071844036554244.properties propsfile=C:\Users\rusty_000\Documents\GitHub\CSCI232_ProgrammingAssignment4\ProgrammingAssignment4\build\junit899220884547240881.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -311,7 +311,7 @@
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
   </properties>
-  <testcase classname="changeMakerTest" name="testEmptyArray" time="0.016" />
+  <testcase classname="changeMakerTest" name="testEmptyArray" time="0.015" />
   <testcase classname="changeMakerTest" name="testDifferentMoneySystem" time="0.0" />
   <testcase classname="changeMakerTest" name="testHigherValue" time="0.0" />
   <testcase classname="changeMakerTest" name="testOneCoinDue" time="0.0" />
