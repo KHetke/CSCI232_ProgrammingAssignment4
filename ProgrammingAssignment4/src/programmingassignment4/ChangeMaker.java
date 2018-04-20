@@ -2,7 +2,7 @@
 package programmingassignment4;
 
 /*
- * @authors Kamran Hetke, Rusty Clayton
+ * @authors Kamran Hetke, Rusty Clayton, Derek Jacobson
  * Date: 4/17/2018
  * Description: Change Maker class runs a dynamic algorith to return a list of coins as change.
  */
@@ -17,7 +17,7 @@ public class ChangeMaker {
 		if(coinArray.length == 0) {
 			throw new IllegalArgumentException("Empty array");
 		}               
-                
+                /*
                 //two dimensional memo array built so that first row and column can be zero values.
                 int [][] memoArray= new int [coinArray.length+1][changeDue+1];
                 
@@ -68,7 +68,40 @@ public class ChangeMaker {
                         coinList.add(coinArray[i-1]);
                     }                    
                 }
-		
+		*/
+                
+                
+                
+                int [] memoArray2 = new int[changeDue+1];
+                int [] outputArray2 = new int[changeDue+1];
+                
+                int maximum=Integer.MAX_VALUE;
+                
+                memoArray2[0]=0;
+                outputArray2[0]=-1;
+                for(int i=1; i<changeDue+1; i++){
+                    memoArray2[i]=maximum;
+                    outputArray2[i]=-1;
+                }
+                
+                for(int i=0; i<coinArray.length;i++){
+                    for(int j=0; j<changeDue+1; j++){     
+                        if(j>=coinArray[i]){                            
+                            int temp = memoArray2[j];                            
+                            memoArray2[j]=getMin((memoArray2[j-coinArray[i]]+1),j);
+                            if(memoArray2[j]<temp){
+                                outputArray2[j]=i;
+                            }
+                        }                                           
+                    }
+                }
+                
+                int i=changeDue;
+                while(i>0){
+                    coinList.add(coinArray[outputArray2[i]]);
+                    i-=coinArray[outputArray2[i]];
+                }
+                
 		return coinList;
 		
 	}

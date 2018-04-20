@@ -7,7 +7,7 @@ import programmingassignment4.ChangeMaker;
 
 /**
  *
- * @authors Kamran Hetke, Rusty Clayton
+ * @authors Kamran Hetke, Rusty Clayton, Derek Jacobson
  * Date: 4/17/2018
  * Description: A test file to run the changemaker class with a dynamic algorithm
  */
